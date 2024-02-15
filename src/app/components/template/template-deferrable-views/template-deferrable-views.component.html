@@ -1,0 +1,18 @@
+<h2 #trigger>Deferrable Views</h2>
+
+<button (click)="isTrue = true">Add true</button>
+@defer(on interaction) {
+  <app-new-component />
+}
+
+@placeholder(minimum 5s) {
+  <p>Mostrar antes de carregar algo.</p>
+}
+
+@loading(after 150ms; minimum 2s) {
+  <p>Loading...</p>
+}
+
+@error {
+ <p>Loading Failed</p>
+}
